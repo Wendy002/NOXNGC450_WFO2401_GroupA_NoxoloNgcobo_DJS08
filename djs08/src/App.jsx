@@ -1,13 +1,23 @@
+//App component
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./Home.jsx"
+import About from "./About.jsx"
 
-//import './App.css'
+
+//create browser router
+// Nest routes and the route element inside
+// insert App to render
 
 function App() {
 
-
   return (
-    <>
-      <h1>Hello world! router here</h1>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>      
+    </Routes>
+
+  </BrowserRouter>
   )
 }
 
