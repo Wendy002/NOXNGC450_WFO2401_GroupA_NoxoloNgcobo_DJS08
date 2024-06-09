@@ -1,5 +1,7 @@
 //home page
 import { Link } from "react-router-dom"
+ // link is used to render page without any refreshing
+
 const Home = () => {
   return (
     <div className="home-container">

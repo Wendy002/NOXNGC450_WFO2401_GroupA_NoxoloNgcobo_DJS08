@@ -1,5 +1,5 @@
 import bgImg from "./assets/images/about-hero.png"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom" // link is used to render page without any refreshing
 
 const About = () => {
   return (
