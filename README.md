@@ -4,7 +4,7 @@
 
 After cloning the repo, run `npm install` to install the dependencies 
 
-Are you ready to get stuck into some React Router? For this challenge, you are required to code along with the lecturer from this lesson: [VanLife Project Bootstrapping](https://scrimba.com/learn/react/vanlife-project-bootstrapping-co8bc40b191eec875ecf00b23).
+Are you ready to get stuck into some React Router? For this challenge, you are required to code along with the lecturer from this lesson: [VanLife Project Bootstrapping] ).
 
 For this challenge you are required to code along with the lecturer from this lesson: https://scrimba.com/learn/react/vanlife-project-bootstrapping-co8bc40b191eec875ecf00b23
 
@@ -20,6 +20,7 @@ For your recorded presentation, you will be discussing key concepts related to R
 
 **Key Points to Cover:**
 - What is the purpose of using React Router in a React application?
+  - The purpose of react router is client side routing
 - How do you set up React Router using `BrowserRouter` as shown in the lessons?
 - Describe the role of the `<Routes>` and `<Route>` components in defining the navigation structure.
 
