@@ -1,3 +1,5 @@
+import bgImg from "./assets/images/about-hero.png"
+import { Link } from "react-router-dom"
 
 const About = () => {
   return (
