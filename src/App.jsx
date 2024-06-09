@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./Home.jsx"
 import About from "./About.jsx"
 import Vans from "./Vans.jsx"
-
+import './server.js'
 
 //create browser router
 // Nest routes and the route element inside
