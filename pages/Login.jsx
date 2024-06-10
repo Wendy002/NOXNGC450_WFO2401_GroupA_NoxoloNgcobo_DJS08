@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate, useLocation } from "react-router-dom"
-
+import { loginUser } from "../api"
 
 const Login = () => {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
@@ -8,7 +8,8 @@ const Login = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(loginFormData)
+        loginUser(loginFormData)
+            .then(data => console.log(data))
     }
 
     function handleChange(e) {
