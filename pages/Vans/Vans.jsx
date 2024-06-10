@@ -4,10 +4,15 @@ import { Link } from "react-router-dom"
 //fetch("/api/vans")` to kick off the request to get the
 // data from our fake Mirage JS server
 //use react.useEffect
-
+// use search params to filtewr out vans
 
 const Vans = () => {
+    const [searchParams, setSearchParams] = useSearchParams()
+
     const [vans, setVans] = React.useState([])
+    const typeFilter = searchParams.get("type")
+    console.log(typeFilter)
+
     React.useEffect(()=>{
         fetch("api/vans")
         .then(res=> res.json())
