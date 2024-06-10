@@ -8,9 +8,9 @@ import Layout from "../Layout-components/Layout.jsx"
 import Dashboard from "./Host/Dashboard.jsx"
 import Income from "./Host/Income.jsx"
 import Reviews from "./Host/Reviews.jsx"
-import HeaderLayout from "../Layout-components/HostLayout.jsx"
-import '../server.js'
 import HostLayout from "../Layout-components/HostLayout.jsx"
+import '../server.js'
+
 
 //create browser router
 // Nest routes and the route element inside
