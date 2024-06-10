@@ -16,7 +16,8 @@ import HostVansInfo from "./Host/HostVansInfo.jsx"
 import HostVansPhotos from "./Host/HostVansPhotos.jsx"
 import HostVansPricing from "./Host/HostVansPricing.jsx"
 import NotFound from "./NotFound.jsx"
-
+import Login from "./Login.jsx"
+import AuthRequired from "../Layout-components/AuthRequired.jsx"
 //create browser router
 // Nest routes and the route element inside
 // insert App to render
@@ -32,18 +33,26 @@ function App() {
         <Route path='about' element={<About/>}/>   
         <Route path="vans" element={<Vans />} />
         <Route path="vans/:id" element={<VanDetail/>} /> 
+        <Route
+            path="login"
+            element={<Login />}
+          />
 
-        <Route path="host" element={<HostLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="income" element={<Income />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="vans" element={<HostVans />} />
-          <Route path="vans/:id" element={<HostVansDetail />}>
-            <Route index element={<HostVansInfo />} />
-            <Route path="pricing" element={<HostVansPricing />} />
-            <Route path="photos" element={<HostVansPhotos />} />
-          </Route>
+        <Route element={<AuthRequired />}>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="vans" element={<HostVans />} />
+              <Route path="vans/:id" element={<HostVansDetail />}>
+                <Route index element={<HostVansInfo />} />
+                <Route path="pricing" element={<HostVansPricing />} />
+                <Route path="photos" element={<HostVansPhotos />} />
+              </Route>
+            </Route>
         </Route>
+
+
         <Route path="*" element={<NotFound />}/>
       </Route>
     </Routes>
