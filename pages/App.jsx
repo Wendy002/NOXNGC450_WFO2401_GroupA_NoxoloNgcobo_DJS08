@@ -8,7 +8,9 @@ import Layout from "../Layout-components/Layout.jsx"
 import Dashboard from "./Host/Dashboard.jsx"
 import Income from "./Host/Income.jsx"
 import Reviews from "./Host/Reviews.jsx"
+import HeaderLayout from "../Layout-components/HostLayout.jsx"
 import '../server.js'
+import HostLayout from "../Layout-components/HostLayout.jsx"
 
 //create browser router
 // Nest routes and the route element inside
@@ -26,7 +28,7 @@ function App() {
         <Route path="/vans" element={<Vans />} />
         <Route path="/vans/:id" element={<VanDetail/>} /> 
 
-        <Route path="/host" element={<Dashboard />}>
+        <Route path="/host" element={<HostLayout />}>
           <Route path="/host/income" element={<Income />} />
           <Route path="/host/reviews" element={<Reviews />} />
         </Route>
