@@ -11,6 +11,7 @@ import '../server.js'
 //create browser router
 // Nest routes and the route element inside
 // insert App to render
+// Wrapper route that is the layout that will always display if navigating throug all pages
 
 function App() {
 
