@@ -11,14 +11,17 @@ const Vans = () => {
 
     const [vans, setVans] = React.useState([])
     const typeFilter = searchParams.get("type")
-    console.log(typeFilter)
+    
 
     React.useEffect(()=>{
         fetch("api/vans")
         .then(res=> res.json())
         .then(data => setVans(data.vans))
     },[])
-
+    const displayedVans = typeFilter
+    ? vans.filter(van => van.type === typeFilter)
+    : vans
+  // filter the list of vans based on the `typeFilter
     const vanElements = vans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
