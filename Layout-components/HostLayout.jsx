@@ -2,6 +2,11 @@ import {Outlet, NavLink} from "react-router-dom"
 // create nav for dashboard, Income, Reviews
 
 const HostLayout = () => {
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616"
+}
   return (
     <>
       <nav className="host-nav">
