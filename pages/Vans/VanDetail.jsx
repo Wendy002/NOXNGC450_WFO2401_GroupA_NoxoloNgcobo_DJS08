@@ -14,7 +14,7 @@ const VanDetail = () => {
 
 
   const search = location.state?.search || "" // back up variable
-    
+  const type = location.state?.type || "all"  
   // check if there is a van then displays or else show....loading..
   // @returns image , type,price, description and action button to rent van
   return (
@@ -23,7 +23,7 @@ const VanDetail = () => {
                 to={`..${search}`}
                 relative="path"
                 className="back-button"
-            >&larr; <span>Back to all vans</span></Link>
+            >&larr; <span>Back to {type} vans</span></Link>
     {van ? (
         <div className="van-detail">
             <img src={van.imageUrl} />
