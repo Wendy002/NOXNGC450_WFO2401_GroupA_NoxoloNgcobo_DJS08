@@ -1,6 +1,7 @@
 //vans page component
 import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
+import { getVans } from "../../api"
 //fetch("/api/vans")` to kick off the request to get the
 // data from our fake Mirage JS server
 //use react.useEffect
@@ -14,10 +15,14 @@ const Vans = () => {
     
 
     React.useEffect(()=>{
-        fetch("api/vans")
-        .then(res=> res.json())
-        .then(data => setVans(data.vans))
+        async function loadVans() {
+            const data = await getVans()
+            setVans(data)
+        }
+        
+        loadVans()
     },[])
+    
     const displayedVans = typeFilter
     ? vans.filter(van => van.type === typeFilter)
     : vans
