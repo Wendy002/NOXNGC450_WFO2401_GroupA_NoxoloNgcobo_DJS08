@@ -12,7 +12,9 @@ import HostLayout from "../Layout-components/HostLayout.jsx"
 import HostVans from "./Host/HostVans.jsx"
 import HostVansDetail from "./Host/HostVansDetail.jsx"
 import '../server.js'
-
+import HostVansInfo from "./Host/HostVansInfo.jsx"
+import HostVansPhotos from "./Host/HostVansPhotos.jsx"
+import HostVansPricing from "./Host/HostVansPricing.jsx"
 
 //create browser router
 // Nest routes and the route element inside
@@ -35,7 +37,11 @@ function App() {
           <Route path="income" element={<Income />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="vans" element={<HostVans />} />
-          <Route path="vans/:id" element={<HostVansDetail />} />
+          <Route path="vans/:id" element={<HostVansDetail />}>
+            <Route index element={<HostVansInfo />} />
+            <Route path="pricing" element={<HostVansPricing />} />
+            <Route path="photos" element={<HostVansPhotos />} />
+          </Route>
         </Route>
         
       </Route>
