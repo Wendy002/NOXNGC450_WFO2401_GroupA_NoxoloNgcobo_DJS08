@@ -4,7 +4,7 @@ import Home from "./Home.jsx"
 import About from "./About.jsx"
 import Vans from "./Vans.jsx"
 import VanDetail from "./VanDetail.jsx"
-import './server.js'
+import '../server.js'
 
 //create browser router
 // Nest routes and the route element inside
