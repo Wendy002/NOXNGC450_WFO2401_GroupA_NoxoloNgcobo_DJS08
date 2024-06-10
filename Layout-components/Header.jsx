@@ -5,9 +5,9 @@ const Header = () => {
     <header>
         <Link to="/">#VANLIFE</Link>
         <nav>
-            <NavLink to="/host">Host</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/vans">Vans</NavLink>
+            <NavLink to="/host" className={({isActive}) => isActive ? "active-link" : null}>Host</NavLink>
+            <NavLink to="/about" className={({isActive}) => isActive ? "active-link" : null}>About</NavLink>
+            <NavLink to="/vans" className={({isActive}) => isActive ? "active-link" : null}> Vans</NavLink>
         </nav>
     </header>
   )
