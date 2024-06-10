@@ -2,10 +2,12 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./Home.jsx"
 import About from "./About.jsx"
-import Vans from "./Vans.jsx"
-import VanDetail from "./VanDetail.jsx"
+import Vans from "./Vans/Vans.jsx"
+import VanDetail from "./Vans/VanDetail.jsx"
 import Layout from "../Layout-components/Layout.jsx"
-
+import Dashboard from "./Host/Dashboard.jsx"
+import Income from "./Host/Income.jsx"
+import Reviews from "./Host/Reviews.jsx"
 import '../server.js'
 
 //create browser router
@@ -22,7 +24,10 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>   
         <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element={<VanDetail/>} />  
+        <Route path="/vans/:id" element={<VanDetail/>} /> 
+        <Route path="/host" element={<Dashboard />} />
+        <Route path="/host/income" element={<Income />} />
+        <Route path="/host/reviews" element={<Reviews />} />
       </Route>
     </Routes>
 
