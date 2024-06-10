@@ -22,7 +22,7 @@ const Vans = () => {
     ? vans.filter(van => van.type === typeFilter)
     : vans
   // filter the list of vans based on the `typeFilter
-    const vanElements = vans.map(van => (
+    const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
                 <img src={van.imageUrl} />
