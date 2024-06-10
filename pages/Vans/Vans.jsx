@@ -1,6 +1,6 @@
 //vans page component
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 //fetch("/api/vans")` to kick off the request to get the
 // data from our fake Mirage JS server
 //use react.useEffect
@@ -21,7 +21,7 @@ const Vans = () => {
     const displayedVans = typeFilter
     ? vans.filter(van => van.type === typeFilter)
     : vans
-  // filter the list of vans based on the `typeFilter
+  // filter the list of vans based on the `typeFilterQ
     const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
