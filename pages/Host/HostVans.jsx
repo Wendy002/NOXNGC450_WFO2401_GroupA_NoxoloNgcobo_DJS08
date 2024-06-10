@@ -26,10 +26,24 @@ const HostVans = () => {
         </div>
     </Link>
     ))
-
+  // return cards for each van and its detaiils
   return (
-    <div>HostVans</div>
-  )
+    <section>
+        <h1 className="host-vans-title">Your listed vans</h1>      
+        <div className="host-vans-list">
+            {
+                vans.length > 0 ? (
+                    <section>
+                        {hostVansEls}
+                    </section>
+
+                ) : (
+                        <h2>Loading...</h2>
+                    )
+            }
+        </div>
+    </section>
+   )
 }
 
 export default HostVans
