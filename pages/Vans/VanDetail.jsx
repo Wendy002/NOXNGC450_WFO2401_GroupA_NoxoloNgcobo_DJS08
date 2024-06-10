@@ -1,16 +1,36 @@
 import React from 'react'
 import {Link, useParams,useLocation } from 'react-router-dom'
+import { getVans } from "../../api"
 
 const VanDetail = () => {
-  const params = useParams()    
+  const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState(null)
+  const {id} = useParams()    
   const location = useLocation()        //use params to fetch each vans id
   const [van, setVan] = React.useState(null)   //init state to set van info              
   
   React.useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-        .then(res => res.json())                      //use effect to handle data fetching using params id
-        .then(data => setVan(data.vans))              // set each van page with info
-}, [params.id])
+    async function loadVans() {
+      setLoading(true)
+      try {
+          const data = await getVans(id)
+          setVan(data)
+      } catch (err) {
+          setError(err)
+      } finally {
+          setLoading(false)
+      }
+    }
+    loadVans()             // set each van page with info
+  }, [id])
+  
+  if (loading) {
+    return <h1>Loading...</h1>
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>
+  }
 
 
   const search = location.state?.search || "" // back up variable
