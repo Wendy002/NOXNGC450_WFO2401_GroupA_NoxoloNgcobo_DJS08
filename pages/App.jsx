@@ -15,6 +15,7 @@ import '../server.js'
 import HostVansInfo from "./Host/HostVansInfo.jsx"
 import HostVansPhotos from "./Host/HostVansPhotos.jsx"
 import HostVansPricing from "./Host/HostVansPricing.jsx"
+import NotFound from "./NotFound.jsx"
 
 //create browser router
 // Nest routes and the route element inside
@@ -43,7 +44,7 @@ function App() {
             <Route path="photos" element={<HostVansPhotos />} />
           </Route>
         </Route>
-        <Route path="*" element={<h1>Page not found!</h1>} />
+        <Route path="*" element={<NotFound />}/>
       </Route>
     </Routes>
 
