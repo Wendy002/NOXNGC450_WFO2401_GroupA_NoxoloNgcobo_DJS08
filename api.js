@@ -5,7 +5,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection  } from "firebase/firestore/lite"
+import { getFirestore, collection, getDocs  } from "firebase/firestore/lite"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,6 +30,14 @@ const db = getFirestore(app)
 // Refactoring the fetching functions below
 const vansCollectionRef = collection(db, "vans")
 
+export async function getVans() {
+    const snapshot = await getDocs(vansCollectionRef)
+    const vans = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return vans
+}
 
 
 
