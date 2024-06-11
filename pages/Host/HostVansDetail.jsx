@@ -1,5 +1,5 @@
 import React from "react"
-import { getHostVans } from "../../api"
+import { getVan } from "../../api"
 import { Link , NavLink, Outlet, useParams} from "react-router-dom"
 
 const HostVansDetail = () => {
@@ -12,7 +12,7 @@ const HostVansDetail = () => {
         async function loadVans() {
             setLoading(true)
             try {
-                const data = await getHostVans(id)
+                const data = await getVan(id)
                 setCurrentVan(data)
             } catch (err) {
                 setError(err)
